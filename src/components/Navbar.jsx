@@ -60,9 +60,11 @@ export default function Navbar() {
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <button className="!bg-[#FF16E0] hover:!bg-pink-500 cursor-pointer text-white font-semibold px-6 py-2 rounded-full shadow-lg transition duration-200">
-              Contact Us
-            </button>
+            <Link to={"/contact"}>
+              <button className="!bg-[#FF16E0] hover:!bg-pink-500 cursor-pointer text-white font-semibold px-6 py-2 rounded-full shadow-lg transition duration-200">
+                Contact Us
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
