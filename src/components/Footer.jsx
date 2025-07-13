@@ -72,7 +72,7 @@ const Footer = () => {
             <p className="mb-4 text-center md:text-left">
               Email:
               <a href="mailto:support@Lynogtech.ng" className="hover:underline">
-                support@Lynogtech.ng
+                office@lynogtech.com.ng
               </a>
             </p>
             <div className="flex space-x-4">
@@ -98,7 +98,7 @@ const Footer = () => {
       <div className="border-t border-white border-opacity-30 mt-8 pt-6 text-center text-sm">
         <p>
           Copyright &copy;{new Date().getFullYear()} All rights reserved by
-          Lynogtech
+          LYNOG TECH NIG
         </p>
       </div>
     </footer>

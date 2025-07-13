@@ -9,21 +9,21 @@ export default function ClientTestimonials() {
       id: 1,
       title: "Exceptional Service",
       description:
-        "LynogTech helped us transform our idea into a fully functional app. Their professionalism and dedication were outstanding.",
+        "Lynog Tech helped us transform our idea into a fully functional app. Their professionalism and dedication were outstanding.",
       image: client1,
     },
     {
       id: 2,
       title: "Reliable Partnership",
       description:
-        "Working with LynogTech has been a game-changer for our business. They delivered on time and exceeded our expectations.",
+        "Working with Lynog Tech has been a game-changer for our business. They delivered on time and exceeded our expectations.",
       image: client2,
     },
     {
       id: 3,
       title: "Innovative Solutions",
       description:
-        "The team at LynogTech provided us with innovative solutions that have significantly improved our operational efficiency.",
+        "The team at Lynog Tech provided us with innovative solutions that have significantly improved our operational efficiency.",
       image: client3,
     },
   ];
