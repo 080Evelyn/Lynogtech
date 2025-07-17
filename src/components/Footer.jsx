@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/lynoLogo.png";
 import {
   FaFacebook,
   FaInstagram,
@@ -12,7 +11,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
         {/* Logo and Company Name */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <img src={logo} alt="Lynogg Tech Logo" className="h-12 mb-2" />
+          {/* <img src={logo} alt="Lynogg Tech Logo" className="h-12 mb-2" /> */}
+          <p className="text-4xl font-bold text-blue-600">LYNOG TECH NIG</p>
         </div>
 
         {/* Links Section */}
