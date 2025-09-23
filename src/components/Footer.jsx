@@ -5,14 +5,14 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa6";
+import logo from "../assets/logo11.png"
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-[#994F8F] to-[#46C8FC] text-white py-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
         {/* Logo and Company Name */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          {/* <img src={logo} alt="Lynogg Tech Logo" className="h-12 mb-2" /> */}
-          <p className="text-4xl font-bold text-blue-600">LYNOG TECH NIG</p>
+        <div className="md:ml-[3%]">
+          <img src={logo} alt="Lynogg Tech Logo" className="h-11 mb-2" />
         </div>
 
         {/* Links Section */}
@@ -71,7 +71,9 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-3">Follow us</h4>
             <p className="mb-4 text-center md:text-left">
               Email:
-              <a href="mailto:support@Lynogtech.ng" className="hover:underline">
+              <a
+                href="mailto:support@Lynogtech.ng"
+                className="hover:underline px-1.5">
                 office@lynogtech.com.ng
               </a>
             </p>
