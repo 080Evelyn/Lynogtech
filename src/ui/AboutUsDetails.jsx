@@ -31,7 +31,7 @@ const AboutUsDetails = () => {
           {[
             {
               img: team0,
-              title: "Client-Centric Approach",
+              title: "Client Centric Approach",
               desc: `We prioritize understanding our clients' unique needs, ensuring that every solution we provide is tailored specifically for them.`,
             },
             {
