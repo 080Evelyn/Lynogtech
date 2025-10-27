@@ -5,7 +5,8 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa6";
-import logo from "../assets/logo11.png"
+import logo from "../assets/logo11.png";
+import { MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-[#994F8F] to-[#46C8FC] text-white py-8 px-4 md:px-8">
@@ -13,6 +14,10 @@ const Footer = () => {
         {/* Logo and Company Name */}
         <div className="md:ml-[3%]">
           <img src={logo} alt="Lynogg Tech Logo" className="h-11 mb-2" />
+          <span className="flex mt-10">
+            <MapPin /> 1 Alhaji Adenekan Street, opposite Access bank, College
+            Bustop Okota, Lagos
+          </span>
         </div>
 
         {/* Links Section */}
