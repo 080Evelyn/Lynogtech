@@ -105,7 +105,7 @@ const Footer = () => {
       <div className="border-t border-white border-opacity-30 mt-8 pt-6 text-center text-sm">
         <p>
           Copyright &copy;{new Date().getFullYear()} All rights reserved by
-          LYNOG TECH NIG
+          LYNOG TECH NIG. LTD
         </p>
       </div>
     </footer>
