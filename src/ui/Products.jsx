@@ -10,42 +10,42 @@ import delynImg1 from "../assets/bitwire1.png";
 const ownProducts = [
   {
     id: 1,
-    name: "Lynafrick Agro",
-    category: "Food & Agriculture",
-    desc: "Bridging farmers and markets through technology delivering fresh, traceable agro products to consumers and businesses across Nigeria.",
-    image: lynafrickImg,
-    link: "https://www.lynafrickagrofoods.com.ng",
-    accent: "#4AFF91",
+    name: "Lynspeed",
+    category: "EdTech Platform",
+    desc: "A Nigerian EdTech platform helping students ace JAMB exams while providing career guidance and skill development to set them on the right path.",
+    image: lynspeedImg,
+    link: "https://www.lynspeed.com.ng",
+    accent: "#00F0FF",
     number: "01",
   },
   {
     id: 2,
-    name: "Monifrap",
-    category: "FinTech",
-    desc: "A financial management platform that helps businesses track payments, manage invoices, and maintain clarity across all client transactions.",
-    image: monifrapImg,
-    link: "https://www.monifrap.com.ng",
-    accent: "#FFB800",
+    name: "DELYN",
+    category: "Business Solutions",
+    desc: "An all-in-one business software for Nigerian companies to automate and scale operations — a white-label platform for distribution and logistics brands to run their own web and mobile apps.",
+    image: delynImg,
+    link: "https://delyn.biz",
+    accent: "#FF2EBE",
     number: "02",
   },
   {
     id: 3,
-    name: "Lynspeed",
-    category: "EdTech Platform",
-    desc: "A career and learning platform built for exam prep, skill development, and professional growth empowering users to move faster in their careers.",
-    image: lynspeedImg,
-    link: "https://www.lynspeed.com.ng",
-    accent: "#00F0FF",
+    name: "Lynafrick Agro",
+    category: "Food & Agriculture",
+    desc: "A Nigerian food processing company specialising in 100% natural, organic flour products — connecting quality agro produce directly to consumers and businesses.",
+    image: lynafrickImg,
+    link: "https://www.lynafrickagrofoods.com.ng",
+    accent: "#4AFF91",
     number: "03",
   },
   {
     id: 4,
-    name: "DELYN",
-    category: "Business Solutions",
-    desc: "End-to-end digital business solutions that streamline operations, boost brand visibility, and give enterprises the infrastructure to scale with confidence.",
-    image: delynImg,
-    link: "https://delyn.biz",
-    accent: "#FF2EBE",
+    name: "Monifrap",
+    category: "FinTech",
+    desc: "An all-in-one Nigerian banking app that lets users link and manage multiple local bank accounts in a single interface — simplifying personal and business finances.",
+    image: monifrapImg,
+    link: "https://www.monifrap.com.ng",
+    accent: "#FFB800",
     number: "04",
   },
 ];
@@ -54,8 +54,8 @@ const clientProducts = [
   {
     id: 5,
     name: "Miala Media",
-    category: "Digital Marketing",
-    desc: "A results-driven marketing platform for brand growth  covering content strategy, social media, and full-scale digital campaigns.",
+    category: "Beauty & Cosmetics",
+    desc: "A Nigerian cosmetics and skincare brand crafted for melanin-rich skin — offering a curated range of beauty products that celebrate and nourish African skin tones.",
     image: mialaImg,
     link: "https://www.mialacosmetics.com",
     accent: "#FF6B35",
@@ -65,7 +65,7 @@ const clientProducts = [
     id: 6,
     name: "BITWIRE",
     category: "Crypto & Finance",
-    desc: "A secure digital asset platform for buying, selling, and managing cryptocurrencies — backed by real-time market data and robust security.",
+    desc: "A single platform to trade gift cards, buy and sell crypto, and pay utility bills like data and electricity — turning digital assets into local value quickly and securely.",
     image: delynImg1,
     link: "https://www.bitwiretrust.com",
     accent: "#A78BFA",
@@ -99,7 +99,6 @@ const ProductCard = ({ p, i, variant = "default" }) => {
               : "0 20px 60px rgba(0,0,0,0.4)",
           }}
         >
-          
           <div
             className="absolute top-0 left-0 right-0 h-[2px] transition-opacity duration-500"
             style={{
@@ -108,7 +107,6 @@ const ProductCard = ({ p, i, variant = "default" }) => {
             }}
           />
 
-          
           <div
             className="absolute top-3 right-5 font-black leading-none select-none transition-all duration-500 pointer-events-none"
             style={{
@@ -121,7 +119,6 @@ const ProductCard = ({ p, i, variant = "default" }) => {
             {p.number}
           </div>
 
-          
           <div className="relative overflow-hidden h-52 flex-shrink-0">
             <motion.img
               src={p.image}
@@ -147,7 +144,6 @@ const ProductCard = ({ p, i, variant = "default" }) => {
             </div>
           </div>
 
-          
           <div className="p-7 pt-5 flex flex-col flex-1">
             <h3
               className="mb-3 tracking-tight leading-tight transition-colors duration-300"
@@ -167,7 +163,6 @@ const ProductCard = ({ p, i, variant = "default" }) => {
               {p.desc}
             </p>
 
-            
             <div className="flex items-center justify-between mt-auto">
               <span
                 className="text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300"
@@ -256,13 +251,11 @@ const Products = () => {
       >
         <div className="noise-overlay" />
 
-        
         <div className="absolute inset-0 pointer-events-none" style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }} />
 
-        
         <motion.div className="absolute pointer-events-none" style={{
           top: "-15%", left: "5%", width: "700px", height: "700px",
           background: "radial-gradient(circle, rgba(80,40,255,0.1) 0%, transparent 70%)",
@@ -280,7 +273,6 @@ const Products = () => {
 
         <div className="relative max-w-7xl mx-auto px-6 md:px-10">
 
-        
           <div className="mb-20">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -343,7 +335,6 @@ const Products = () => {
             />
           </div>
 
-          
           <SectionLabel label="Our Own Products" sublabel="In-house built" delay={0} />
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-7 mb-24 xl:max-w-[90%] mx-auto">
             {ownProducts.map((p, i) => (
@@ -351,7 +342,6 @@ const Products = () => {
             ))}
           </div>
 
-        
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -371,7 +361,6 @@ const Products = () => {
             </div>
           </motion.div>
 
-          
           <SectionLabel label="Client Solutions" sublabel="Delivered for clients" delay={0.1} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-20 xl:max-w-[66%] mx-auto">
             {clientProducts.map((p, i) => (
@@ -379,7 +368,6 @@ const Products = () => {
             ))}
           </div>
 
-        
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -405,7 +393,7 @@ const Products = () => {
               </p>
             </div>
             <a
-              href="#contact"
+              href="#https://wa.me/2349033113048?text=Hi%2C%20I%27d%20like%20to%20start%20a%20project"
               className="flex-shrink-0 px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(107,78,255,0.45)]"
               style={{
                 background: "linear-gradient(135deg, #6B4EFF, #FF16E0)",

@@ -405,24 +405,8 @@ const Hero = () => {
             </motion.div>
 
           
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-[15%] right-[2%] z-40 px-3 py-2 rounded-xl"
-              style={{
-                background: "rgba(6,4,15,0.8)",
-                border: "1px solid rgba(236,72,153,0.3)",
-                backdropFilter: "blur(12px)",
-              }}
-            >
-              <p className="text-[10px] font-medium mb-1" style={{ color: "rgba(200,200,220,0.5)" }}>Tech Stack</p>
-              <div className="flex gap-1.5">
-                {["⚛️", "🟨", "🐍", "🔥"].map((e, i) => (
-                  <span key={i} className="text-sm">{e}</span>
-                ))}
-              </div>
-            </motion.div>
+           
+           
           </div>
         </div>
 
@@ -437,7 +421,7 @@ const Hero = () => {
           <div className="ticker-inner">
             {[...Array(2)].map((_, ri) => (
               <span key={ri}>
-                {["Web Development", "Mobile Apps", "EdTech", "FinTech", "Agro Tech", "Digital Marketing", "UI/UX Design", "SaaS Platforms", "Brand Identity"].map((t, i) => (
+                {["Web Development", "Mobile Apps", "EdTech", "FinTech", "Agro Tech", "UI/UX Design", "SaaS Platforms", "Brand Identity"].map((t, i) => (
                   <span key={i} className="inline-flex items-center gap-4 mx-8 text-xs font-semibold tracking-widest uppercase"
                     style={{ color: "rgba(160,160,200,0.45)" }}>
                     <span className="w-1 h-1 rounded-full bg-[#8B5CF6] inline-block" />
