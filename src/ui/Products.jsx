@@ -373,13 +373,13 @@ const Products = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-[1.5rem]"
+            className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 p-8 rounded-[1.5rem]"
             style={{
               background: "rgba(107,78,255,0.05)",
               border: "1px solid rgba(107,78,255,0.14)",
             }}
           >
-            <div>
+            <div className="text-center sm:text-left">
               <p className="font-black mb-1" style={{
                 fontFamily: "'Bebas Neue', sans-serif",
                 letterSpacing: "0.05em",
@@ -393,7 +393,9 @@ const Products = () => {
               </p>
             </div>
             <a
-              href="#https://wa.me/2349033113048?text=Hi%2C%20I%27d%20like%20to%20start%20a%20project"
+              href="https://wa.me/2349033113048?text=Hi%2C%20I%27d%20like%20to%20start%20a%20project"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-shrink-0 px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(107,78,255,0.45)]"
               style={{
                 background: "linear-gradient(135deg, #6B4EFF, #FF16E0)",
