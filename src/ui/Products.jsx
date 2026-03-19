@@ -53,7 +53,7 @@ const ownProducts = [
 const clientProducts = [
   {
     id: 5,
-    name: "Miala Media",
+    name: "Miala",
     category: "Beauty & Cosmetics",
     desc: "A Nigerian cosmetics and skincare brand crafted for melanin-rich skin — offering a curated range of beauty products that celebrate and nourish African skin tones.",
     image: mialaImg,
