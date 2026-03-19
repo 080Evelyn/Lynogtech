@@ -53,7 +53,7 @@ const ownProducts = [
 const clientProducts = [
   {
     id: 5,
-    name: "Miala",
+    name: "Miala Media",
     category: "Beauty & Cosmetics",
     desc: "A Nigerian cosmetics and skincare brand crafted for melanin-rich skin — offering a curated range of beauty products that celebrate and nourish African skin tones.",
     image: mialaImg,
@@ -246,8 +246,8 @@ const Products = () => {
 
       <section
         ref={sectionRef}
-        className="products-section relative overflow-hidden"
-        style={{ background: "#080B1A", padding: "120px 0 150px", fontFamily: "'DM Sans', sans-serif" }}
+        className="products-section relative overflow-hidden py-14 md:py-20 xl:py-36"
+        style={{ background: "#080B1A", fontFamily: "'DM Sans', sans-serif" }}
       >
         <div className="noise-overlay" />
 
@@ -271,7 +271,7 @@ const Products = () => {
           background: "radial-gradient(ellipse at center, rgba(107,78,255,0.05) 0%, transparent 70%)",
         }} />
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-10">
+        <div className="relative max-w-7xl mx-auto px-4 md:px-10">
 
           <div className="mb-20">
             <motion.div
@@ -373,7 +373,7 @@ const Products = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 p-8 rounded-[1.5rem]"
+            className="flex flex-col sm:flex-row items-center justify-between gap-5 p-5 md:p-8 rounded-[1.5rem]"
             style={{
               background: "rgba(107,78,255,0.05)",
               border: "1px solid rgba(107,78,255,0.14)",

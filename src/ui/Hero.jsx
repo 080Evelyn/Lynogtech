@@ -18,7 +18,6 @@ const CountUp = ({ to, suffix = "" }) => {
   return <>{val}{suffix}</>;
 };
 
-
 const MagneticImage = ({ src, alt, className, delay, style }) => {
   const ref = useRef(null);
   const x = useMotionValue(0);
@@ -51,7 +50,6 @@ const MagneticImage = ({ src, alt, className, delay, style }) => {
     </motion.div>
   );
 };
-
 
 const Ring = ({ size, duration, reverse, style }) => (
   <motion.div
@@ -91,17 +89,10 @@ const Hero = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-        .hero-root {
-          font-family: 'DM Sans', sans-serif;
-        }
-        .hero-display {
-          font-family: 'Syne', sans-serif;
-        }
-        .hero-accent-font {
-          font-family: 'Syne', sans-serif;
-        }
+        .hero-root { font-family: 'DM Sans', sans-serif; }
+        .hero-display { font-family: 'Syne', sans-serif; }
 
         @keyframes float-slow {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -146,19 +137,13 @@ const Hero = () => {
           pointer-events: none;
         }
 
-        .ticker-wrap {
-          overflow: hidden;
-          white-space: nowrap;
-        }
+        .ticker-wrap { overflow: hidden; white-space: nowrap; }
         .ticker-inner {
           display: inline-block;
           animation: ticker 22s linear infinite;
         }
 
-        .glow-btn {
-          position: relative;
-          overflow: hidden;
-        }
+        .glow-btn { position: relative; overflow: hidden; }
         .glow-btn::before {
           content: '';
           position: absolute;
@@ -182,13 +167,9 @@ const Hero = () => {
         className="hero-root relative w-full min-h-screen overflow-hidden flex flex-col"
         style={{ background: "#06040F" }}
       >
-        
         <div className="dot-grid absolute inset-0 pointer-events-none" />
-
-        
         <div className="scanline" />
 
-      
         <motion.div
           className="absolute pointer-events-none"
           style={{
@@ -205,27 +186,21 @@ const Hero = () => {
           }}
         />
 
-        
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(99,60,255,0.18) 0%, transparent 70%)" }} />
         <div className="absolute bottom-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(236,72,153,0.12) 0%, transparent 70%)" }} />
 
-        
         <Ring size={600} duration={40} style={{ top: "50%", right: "-15%", marginTop: -300, borderColor: "rgba(139,92,246,0.07)", borderWidth: 1 }} />
         <Ring size={400} duration={28} reverse style={{ top: "50%", right: "-8%", marginTop: -200, borderColor: "rgba(236,72,153,0.08)", borderWidth: 1, borderStyle: "dashed" }} />
 
-        
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")` }} />
 
-        
-        <div className="relative z-10 flex-1 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-16 pb-10 gap-12 max-w-[1400px] mx-auto w-full pt-10 lg:pt-0">
+        <div className="relative z-10 flex-1 flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 pb-8 lg:pb-10 gap-6 lg:gap-12 max-w-[1400px] mx-auto w-full pt-8 lg:pt-0">
 
-        
-          <div className="lg:w-[52%] flex flex-col gap-7">
+          <div className="lg:w-[52%] flex flex-col gap-6 lg:gap-7 w-full">
 
-          
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -241,20 +216,18 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            
             <div className="overflow-hidden">
               <motion.h1
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-display font-extrabold leading-[0.95] tracking-tight"
-                style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", color: "#fff" }}
+                style={{ fontSize: "clamp(2.6rem, 7vw, 5.5rem)", color: "#fff" }}
               >
                 We Turn
               </motion.h1>
 
-          
-              <div className="overflow-hidden" style={{ height: "clamp(3rem, 7vw, 5.5rem)" }}>
+              <div className="overflow-hidden" style={{ height: "clamp(2.6rem, 7vw, 5.5rem)" }}>
                 <motion.div
                   key={wordIndex}
                   initial={{ y: "100%" }}
@@ -262,7 +235,7 @@ const Hero = () => {
                   exit={{ y: "-100%" }}
                   transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                   className="hero-display font-extrabold shimmer-text leading-[0.95] tracking-tight"
-                  style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}
+                  style={{ fontSize: "clamp(2.6rem, 7vw, 5.5rem)" }}
                 >
                   {words[wordIndex]}
                 </motion.div>
@@ -273,13 +246,12 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="hero-display font-extrabold leading-[0.95] tracking-tight"
-                style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", color: "#fff" }}
+                style={{ fontSize: "clamp(2.6rem, 7vw, 5.5rem)", color: "#fff" }}
               >
                 Into Reality
               </motion.h1>
             </div>
 
-          
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -291,7 +263,6 @@ const Hero = () => {
               elegant, and built to perform. Real solutions for real impact.
             </motion.p>
 
-            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -322,7 +293,6 @@ const Hero = () => {
               </motion.a>
             </motion.div>
 
-            
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -341,15 +311,13 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          
-          <div className="lg:w-[48%] relative flex items-center justify-center"
-            style={{ minHeight: "420px" }}>
-
-          
+          <div
+            className="lg:w-[48%] relative flex items-center justify-center w-full"
+            style={{ minHeight: "260px", maxHeight: "400px" }}
+          >
             <div className="absolute inset-0 pointer-events-none"
               style={{ background: "radial-gradient(circle at 50% 50%, rgba(139,92,246,0.18) 0%, transparent 65%)" }} />
 
-          
             <MagneticImage
               src={laptop}
               alt="Laptop"
@@ -358,7 +326,6 @@ const Hero = () => {
               style={{ width: "70%", maxWidth: 420 }}
             />
 
-            
             <MagneticImage
               src={wire}
               alt="Wireframe"
@@ -373,7 +340,6 @@ const Hero = () => {
               }}
             />
 
-            
             <MagneticImage
               src={phone}
               alt="Phone"
@@ -388,7 +354,6 @@ const Hero = () => {
               }}
             />
 
-            
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -403,14 +368,9 @@ const Hero = () => {
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs font-semibold text-white">5 Platforms Live</span>
             </motion.div>
-
-          
-           
-           
           </div>
         </div>
 
-    
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
