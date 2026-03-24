@@ -270,7 +270,7 @@ const Hero = () => {
               className="flex flex-wrap gap-4"
             >
               <motion.a
-                href="#products"
+                href="/products"
                 whileHover={{ scale: 1.04, boxShadow: "0 0 40px rgba(139,92,246,0.5)" }}
                 whileTap={{ scale: 0.97 }}
                 className="glow-btn relative px-8 py-3.5 rounded-full text-white font-semibold text-sm tracking-wide"
