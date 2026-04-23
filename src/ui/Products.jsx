@@ -71,6 +71,26 @@ const clientProducts = [
     accent: "#A78BFA",
     number: "02",
   },
+  {
+    id: 7,
+    name: "Ifens Technologies",
+    category: "Networking, Starlink & CCTV",
+    desc: "A technology solutions company focused on the supply, installation, and support of networking, security, and connectivity equipment.",
+    image: mialaImg,
+    link: "https://ifenstech.vercel.app/",
+    accent: "#FF6B35",
+    number: "03",
+  },
+  {
+    id: 8,
+    name: "Deon Smart Solution",
+    category: "Smart Lock Systems",
+    desc: "We provide premium smart security solutions designed for modern homes, businesses, and luxury spaces — combining technology, convenience, and peace of mind.",
+    image: delynImg1,
+    link: "https://deon-lovat.vercel.app/",
+    accent: "#A78BFA",
+    number: "04",
+  },
 ];
 
 const ProductCard = ({ p, i, variant = "default" }) => {
