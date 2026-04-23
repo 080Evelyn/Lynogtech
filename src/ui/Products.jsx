@@ -6,8 +6,8 @@ import lynafrickImg from "../assets/lynafrick.png";
 import monifrapImg from "../assets/monifrap.png";
 import mialaImg from "../assets/maila.png";
 import delynImg1 from "../assets/bitwire1.png";
-import deonsmartImg1 from "../assets/deonsmart.png";
-import ifensImg1 from "../assets/ifens.png";
+import deonsmartImg from "../assets/deonsmart.png";
+import ifensImg from "../assets/ifens.png";
 
 const ownProducts = [
   {
@@ -68,7 +68,7 @@ const clientProducts = [
     name: "BITWIRE",
     category: "Crypto & Finance",
     desc: "A single platform to trade gift cards, buy and sell crypto, and pay utility bills like data and electricity — turning digital assets into local value quickly and securely.",
-    image: delynImg1,
+    image: delynImg,
     link: "https://bitwiretrust.vercel.app/",
     accent: "#A78BFA",
     number: "02",
