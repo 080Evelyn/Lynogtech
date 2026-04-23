@@ -88,7 +88,7 @@ const clientProducts = [
     name: "Deon Smart Solution",
     category: "Smart Lock Systems",
     desc: "We provide premium smart security solutions designed for modern homes, businesses, and luxury spaces — combining technology, convenience, and peace of mind.",
-    image: deonsmartImg1,
+    image: deonsmartImg,
     link: "https://deon-lovat.vercel.app/",
     accent: "#FF6B35",
     number: "04",
