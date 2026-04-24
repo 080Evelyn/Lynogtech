@@ -79,7 +79,7 @@ const clientProducts = [
     category: "Networking, Starlink & CCTV",
     desc: "A technology solutions company focused on the supply, installation, and support of networking, security, and connectivity equipment.",
     image: ifensImg,
-    link: "https://ifenstech.vercel.app/",
+    link: "https://ifens.vercel.app/",
     accent: "#A78BFA",
     number: "03",
   },
