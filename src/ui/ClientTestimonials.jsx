@@ -9,104 +9,83 @@ export default function ClientTestimonials() {
       id: 1,
       title: "Exceptional Service",
       description:
-        "Lynog Tech helped us transform our idea into a fully functional app. Their professionalism and dedication were outstanding.",
+        "Lynog Tech helped us transform our idea into a fully functional product. Their professionalism and attention to detail stood out throughout the project.",
       image: client1,
     },
     {
       id: 2,
       title: "Reliable Partnership",
       description:
-        "Working with Lynog Tech has been a game-changer for our business. They delivered on time and exceeded our expectations.",
+        "Working with Lynog Tech has been a strong advantage for our business. They delivered on time and maintained clear communication from start to finish.",
       image: client2,
     },
     {
       id: 3,
-      title: "Innovative Solutions",
+      title: "Efficient & Scalable Solutions",
       description:
-        "The team at Lynog Tech provided us with innovative solutions that have significantly improved our operational efficiency.",
+        "The solutions provided significantly improved our operations. The team understands business needs and delivers with precision.",
       image: client3,
     },
   ];
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay, ease: "easeOut" },
-    }),
-  };
-
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={fadeUp}
-      className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <motion.div variants={fadeUp} className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <motion.div variants={fadeUp} className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl italic font-bold text-gray-900 mb-4">
-            What Our Clients Say
+    <section className="bg-[#0B0F19] py-20 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mb-16 max-w-2xl"
+        >
+          <h2 className="text-3xl md:text-4xl font-semibold text-white">
+            Client Testimonials
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto italic">
-            Client satisfaction is our top priority, and their success stories
-            are a testament to our dedication and expertise.
+          <p className="text-gray-400 mt-3">
+            We focus on delivering reliable solutions that create real impact
+            for businesses. Here’s what some of our clients have to say.
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {testimonials.slice(0, 2).map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              custom={index * 0.3}
-              variants={fadeUp}
-              className="rounded-xl p-8 shadow-lg bg-white">
-              <div className="flex items-center flex-col justify-center mb-6">
-                <div className="bg-white rounded-lg p-4 shadow-md">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.title}
-                    className="w-full md:h-70 object-cover rounded"
-                  />
-                </div>
-                <h3 className="text-xl font-bold my-4 text-center italic">
-                  {testimonial.title}
-                </h3>
-                <p className="text-center text-lg text-gray-600 italic leading-relaxed">
-                  {testimonial.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* TESTIMONIAL GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        {/* Centered Last Testimonial */}
-        <motion.div
-          custom={0.6}
-          variants={fadeUp}
-          className="flex justify-center">
-          <div className="rounded-xl shadow-lg p-8 w-full max-w-md lg:max-w-xl bg-white">
-            <div className="flex items-center flex-col justify-center mb-6">
-              <div className="bg-white rounded-lg p-4 shadow-md">
+          {testimonials.map((t, index) => (
+            <motion.div
+              key={t.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className="bg-[#111827] border border-white/10 rounded-xl p-6 flex flex-col gap-4 hover:border-blue-500/30 transition"
+            >
+
+              {/* IMAGE */}
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10">
                 <img
-                  src={testimonials[2].image}
-                  alt={testimonials[2].title}
-                  className="w-full md:h-70 object-cover rounded"
+                  src={t.image}
+                  alt={t.title}
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold italic my-4 text-center">
-                {testimonials[2].title}
+
+              {/* TITLE */}
+              <h3 className="text-lg font-semibold text-white">
+                {t.title}
               </h3>
-              <p className="text-center text-lg text-gray-600 italic leading-relaxed">
-                {testimonials[2].description}
+
+              {/* TEXT */}
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {t.description}
               </p>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+
+            </motion.div>
+          ))}
+
+        </div>
+      </div>
+    </section>
   );
 }

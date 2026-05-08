@@ -1,105 +1,116 @@
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import contactImg from "../assets/contact.png";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.15, duration: 0.6 },
   }),
 };
 
 const SupportContactSection = () => {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_xheqrb3",      // replace
+        "template_b6x1xgj",     // replace
+        formRef.current,
+        "06WYxmkF7Nuy2l6-m"       // replace
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSuccess("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          setLoading(false);
+          setSuccess("Failed to send message. Try again.");
+          console.error(error);
+        }
+      );
+  };
+
   return (
-    <section className="relative bg-[#D2E3FA] py-16 px-4 md:px-8">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-7 md:gap-11 md:items-stretch overflow-hidden rounded-lg shadow-xl">
-        {/* Left Column: Form Content */}
+    <section className="bg-[#080B1A] py-14 md:py-20 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6">
+
+        {/* FORM */}
         <motion.div
+          className="w-full md:w-1/2 p-6 md:p-10 bg-white/5 border border-white/10 rounded-2xl"
+          initial="hidden"
+          whileInView="visible"
           variants={fadeUp}
-          className="p-8 md:p-12 w-full md:w-1/2 flex flex-col justify-center rounded-lg md:rounded-r-none z-10 bg-white bg-opacity-80">
-          <motion.h2
-            variants={fadeUp}
-            custom={0}
-            className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 md:mb-12">
-            Your ideas deserve the best support
-          </motion.h2>
+        >
+          <h2 className="text-2xl md:text-3xl text-white mb-6">
+            Let’s build something impactful
+          </h2>
 
-          <motion.form className="space-y-6" variants={fadeUp} custom={1}>
-            <motion.div variants={fadeUp} custom={1.1}>
-              <label
-                htmlFor="name"
-                className="block text-gray-700 text-sm font-medium mb-2">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="e.g. Example"
-                className="w-full px-4 py-3 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </motion.div>
+          <form ref={formRef} onSubmit={sendEmail} className="space-y-5">
 
-            <motion.div variants={fadeUp} custom={1.2}>
-              <label
-                htmlFor="email"
-                className="block text-gray-700 text-sm font-medium mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="e.g. xxxxxx@gmail.com"
-                className="w-full px-4 py-3 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </motion.div>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white"
+            />
 
-            <motion.div variants={fadeUp} custom={1.3}>
-              <label
-                htmlFor="message"
-                className="block text-gray-700 text-sm font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                placeholder="Enter your comments..."
-                className="w-full px-4 py-3 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
-              />
-            </motion.div>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white"
+            />
 
-            <motion.button
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              required
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white"
+            />
+
+            <button
               type="submit"
-              variants={fadeUp}
-              custom={1.4}
-              className="w-full !bg-[#FF16E0] rounded-3xl text-white font-bold py-3 px-6 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
-              Submit
-            </motion.button>
-          </motion.form>
+              disabled={loading}
+              className="w-full py-3 rounded-full font-semibold"
+              style={{
+                background: "linear-gradient(135deg, #6B4EFF, #FF16E0)",
+                color: "#fff",
+              }}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+
+            {success && (
+              <p className="text-sm text-center text-gray-300">{success}</p>
+            )}
+          </form>
         </motion.div>
 
-        {/* Right Column: Image with subtle zoom animation */}
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, scale: 0.95 },
-            visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
-          }}
-          className="relative w-full md:w-1/2 bg-[#D2E3FA] min-h-[300px] md:min-h-[auto] rounded-lg md:rounded-l-none flex items-center justify-center"
+        {/* IMAGE */}
+        <div
+          className="w-full md:w-1/2 min-h-[300px] rounded-2xl"
           style={{
             backgroundImage: `url('${contactImg}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
           }}
         />
-      </motion.div>
+      </div>
     </section>
   );
 };

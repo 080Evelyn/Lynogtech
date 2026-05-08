@@ -5,108 +5,148 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa6";
-import logo from "../assets/logo11.png";
 import { MapPin } from "lucide-react";
+import logo from "../assets/logo11.png";
+
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#994F8F] to-[#46C8FC] text-white py-8 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
-        {/* Logo and Company Name */}
-        <div className="md:ml-[3%]">
-          <img src={logo} alt="Lynogg Tech Logo" className="h-11 mb-2" />
-          <span className="flex mt-10">
-            <MapPin /> 1 Alhaji Adenekan Street, opposite Access bank, College
-            Bustop Okota, Lagos
-          </span>
+    <footer className="bg-[#060B16] text-gray-400 pt-16 pb-8 px-6 md:px-12 border-t border-white/5">
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        {/* BRAND */}
+        <div>
+          <img src={logo} alt="Lynog Tech Logo" className="h-10 mb-6" />
+
+          <p className="text-sm leading-relaxed mb-6 max-w-xs">
+            We build scalable digital products and systems that help businesses
+            grow, operate efficiently, and deliver real value.
+          </p>
+
+          <div className="flex items-start gap-2 text-sm">
+            <MapPin size={16} className="mt-1 text-blue-500" />
+            <span>
+              1 Alhaji Adenekan Street, Opp. Access Bank,
+              College Bus Stop, Okota, Lagos
+            </span>
+          </div>
         </div>
 
-        {/* Links Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
-          {/* Useful Links */}
-          <div>
-            <h4 className="font-bold text-lg mb-3">Useful Links</h4>
-            <ul>
-              <Link
-                to="/"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
+        {/* NAVIGATION */}
+        <div>
+          <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">
+            Company
+          </h4>
+
+          <ul className="space-y-3 text-sm">
+            <li>
+              <Link to="/" className="hover:text-white transition">
                 Home
               </Link>
-              <Link
-                to="/services"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-white transition">
                 Services
               </Link>
-              <Link
-                to="/contact"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
-                Contact Us
-              </Link>
-              <Link
-                to="/about"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-white transition">
                 About Us
               </Link>
-            </ul>
-          </div>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-white transition">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-          {/* Legal/Policy Links */}
-          <div>
-            <h4 className="font-bold text-lg mb-3"></h4>{" "}
-            <ul>
-              <Link
-                to="#"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
+        {/* RESOURCES */}
+        <div>
+          <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">
+            Resources
+          </h4>
+
+          <ul className="space-y-3 text-sm">
+            <li>
+              <Link to="#" className="hover:text-white transition">
                 FAQ
               </Link>
-              <Link
-                to="#"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
+            </li>
+            <li>
+              <Link to="#" className="hover:text-white transition">
                 Privacy Policy
               </Link>
-              <Link
-                to="#"
-                className="block hover:!text-pink-400 py-2 border-b border-white/20">
+            </li>
+            <li>
+              <Link to="#" className="hover:text-white transition">
                 Terms & Conditions
               </Link>
-            </ul>
-          </div>
+            </li>
+          </ul>
+        </div>
 
-          {/* Contact Information/Social Media */}
-          <div className="flex flex-col items-center md:items-start">
-            <h4 className="font-bold text-lg mb-3">Follow us</h4>
-            <p className="mb-4 text-center md:text-left">
-              Email:
-              <a
-                href="mailto:support@Lynogtech.ng"
-                className="hover:underline px-1.5">
-                office@lynogtech.com.ng
-              </a>
-            </p>
-            <div className="flex space-x-4">
-              {/* Replace with actual social media icons (e.g., from Font Awesome or SVG) */}
-              <a href="#" className="text-white hover:text-gray-300">
-                <FaFacebook className="w-6 h-6 text-blue-900 hover:text-[#FF16E0]" />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300">
-                <FaTwitter className="w-6 h-6 text-blue-900 hover:text-[#FF16E0]" />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300">
-                <FaInstagram className="w-6 h-6 text-blue-900 hover:text-[#FF16E0]" />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300">
-                <FaLinkedinIn className="w-6 h-6 text-blue-900 hover:text-[#FF16E0]" />
-              </a>
-            </div>
+        {/* CONTACT / SOCIAL */}
+        <div>
+          <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">
+            Contact
+          </h4>
+
+          <p className="text-sm mb-4">
+            Email:{" "}
+            <a
+              href="mailto:office@lynogtech.com.ng"
+              className="text-blue-500 hover:text-blue-400 transition"
+            >
+              office@lynogtech.com.ng
+            </a>
+          </p>
+          <p>
+            tel:{" "}
+            <a
+              href="tel:+2348030000000"
+              className="text-blue-500 hover:text-blue-400 transition"
+            >
+              +234 903 311 3048
+            </a>
+          </p>
+
+          <div className="flex gap-4 mt-4">
+            <a
+              href="#"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white transition"
+            >
+              <FaFacebook />
+            </a>
+
+            <a
+              href="#"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white transition"
+            >
+              <FaTwitter />
+            </a>
+
+            <a
+              href="#"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white transition"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="#"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white transition"
+            >
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="border-t border-white border-opacity-30 mt-8 pt-6 text-center text-sm">
-        <p>
-          Copyright &copy;{new Date().getFullYear()} All rights reserved by
-          LYNOG TECH NIG. LTD
-        </p>
+      {/* BOTTOM */}
+      <div className="mt-12 pt-6 border-t border-white/5 text-center text-xs text-gray-500">
+        © {new Date().getFullYear()} Lynog Tech Nig. Ltd. All rights reserved.
       </div>
     </footer>
   );

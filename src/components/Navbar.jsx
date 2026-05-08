@@ -1,113 +1,78 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo11.png"
+import logo from "../assets/logo11.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const navLinkStyle = ({ isActive }) =>
+    isActive
+      ? "text-blue-500 font-semibold"
+      : "text-gray-300 hover:text-white transition";
+
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#994F8F] to-[#46C8FC] text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
-          <div className="w-[240px]">
-            <img className="" src={logo} alt="logo"/>
-          </div>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Lynog Tech" className="h-10 object-contain" />
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 text-lg font-medium">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "!text-pink-300 font-semibold"
-                  : "hover:underline !text-white"
-              }>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <NavLink to="/" className={navLinkStyle}>
               Home
             </NavLink>
 
-            <NavLink
-              to="/services"
-              className={({ isActive }) =>
-                isActive
-                  ? "!text-pink-300 font-semibold"
-                  : "hover:underline !text-white"
-              }>
+            <NavLink to="/services" className={navLinkStyle}>
               Services
             </NavLink>
 
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                isActive
-                  ? "!text-pink-300 font-semibold"
-                  : "hover:underline !text-white"
-              }>
-              Contact Us
+            <NavLink to="/about" className={navLinkStyle}>
+              About Us
             </NavLink>
 
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? " !text-pink-300 font-semibold"
-                  : "hover:underline !text-white"
-              }>
-              About Us
+            <NavLink to="/contact" className={navLinkStyle}>
+              Contact
             </NavLink>
           </nav>
 
-          {/* Contact Button */}
-          <div className="hidden md:block">
-            <Link to={"/contact"}>
-              <button className="!bg-[#FF16E0] hover:!bg-pink-500 cursor-pointer text-white font-semibold px-6 py-2 rounded-full shadow-lg transition duration-200">
-                Contact Us
-              </button>
-            </Link>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button
-              className="!bg-[#FF16E0] cursor-pointer"
-              onClick={() => setOpen(!open)}>
-              {open ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-gray-300 hover:text-white transition"
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Menu */}
       <div
-        className={`fixed top-20 left-0 w-full bg-gradient-to-r from-[#46C8FC] to-[#994F8F] px-6 py-4 space-y-2 text-sm font-medium shadow-lg transition-all duration-300 transform ${
-          open
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-4 opacity-0 pointer-events-none"
-        } md:hidden`}>
-        <Link
-          to="/"
-          className="block hover:!text-pink-400 py-2 border-b border-white/20">
-          Home
-        </Link>
-        <Link
-          to="/services"
-          className="block hover:!text-pink-400 py-2 border-b border-white/20">
-          Services
-        </Link>
-        <Link
-          to="/contact"
-          className="block hover:!text-pink-400 py-2 border-b border-white/20">
-          Contact Us
-        </Link>
-        <Link
-          to="/about"
-          className="block hover:!text-pink-400 py-2 border-b border-white/20">
-          About Us
-        </Link>
-        <button className="w-full !bg-[#FF16E0] mt-2 hover:!bg-pink-500 cursor-pointer text-white font-semibold px-4 py-2 rounded-full shadow">
-          Contact Us
-        </button>
+        className={`md:hidden transition-all duration-300 ${open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+      >
+        <div className="px-6 pb-6 pt-2 bg-[#0B0F19] border-t border-white/5 flex flex-col gap-4 text-sm">
+
+          <NavLink to="/" onClick={() => setOpen(false)} className={navLinkStyle}>
+            Home
+          </NavLink>
+
+          <NavLink to="/services" onClick={() => setOpen(false)} className={navLinkStyle}>
+            Services
+          </NavLink>
+
+          <NavLink to="/about" onClick={() => setOpen(false)} className={navLinkStyle}>
+            About Us
+          </NavLink>
+
+          <NavLink to="/contact" onClick={() => setOpen(false)} className={navLinkStyle}>
+            Contact
+          </NavLink>
+        </div>
       </div>
     </header>
   );

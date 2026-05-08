@@ -6,79 +6,88 @@ import service2 from "../assets/service2.png";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 50 },
-  visible: {
+  visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+    transition: { duration: 0.6, delay, ease: "easeOut" },
+  }),
 };
+
+const features = [
+  {
+    img: service1,
+    title: "Post-Launch Support",
+    desc: `Our commitment doesn’t end at launch. We provide continuous updates, monitoring, and maintenance to keep your app secure and optimized.`,
+  },
+  {
+    img: service2,
+    title: "Custom App Design",
+    desc: `We craft user-focused mobile applications tailored to your brand, ensuring intuitive navigation and strong engagement.`,
+  },
+  {
+    img: service2,
+    title: "Cross-Platform Development",
+    desc: `We build apps that work seamlessly across iOS and Android with consistent performance and scalability.`,
+  },
+];
 
 const MobileSolutionsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section
       ref={ref}
-      className="relative py-16 px-4 md:px-8 overflow-hidden bg-[#D2E3FA]">
-      {/* Background Image */}
+      className="relative py-16 px-4 md:px-10 overflow-hidden bg-[#080B1A]"
+    >
+      {/* Background */}
       <div
-        className="absolute w-[50%] inset-0 bg-cover bg-center "
-        style={{ backgroundImage: `url('${serviceBg}')` }}></div>
+        className="absolute inset-0 opacity-[0.05] bg-cover bg-center"
+        style={{ backgroundImage: `url('${serviceBg}')` }}
+      />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Section Heading */}
+      <div className="relative z-10 max-w-5xl mx-auto">
+        {/* Header */}
         <motion.div
           variants={fadeUpVariant}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-12 italic">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          className="text-center mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
             Innovative Mobile Solutions
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600">
+          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
             Transforming your ideas into user-friendly mobile experiences.
           </p>
         </motion.div>
 
-        {/* Feature List */}
+        {/* Features */}
         <div className="space-y-12">
-          {[
-            {
-              img: service1,
-              title: "Post-Launch Support",
-              desc: `Our commitment to your success doesn't end at launch. We provide ongoing support and maintenance to ensure your app remains updated, secure, and optimized for performance.`,
-            },
-            {
-              img: service2,
-              title: "Custom App Design",
-              desc: `Our team specializes in creating unique and tailored mobile app designs that resonate with your brand identity. We ensure that every visual element is optimized for user engagement and functionality.`,
-            },
-            {
-              img: service2,
-              title: "Cross-Platform Development",
-              desc: `We leverage cutting-edge technologies to develop apps that work seamlessly across various platforms. Whether it's iOS or Android, our apps maintain consistent performance and user experience.`,
-            },
-          ].map((item, index) => (
+          {features.map((item, index) => (
             <motion.div
               key={index}
+              custom={index * 0.2}
               variants={fadeUpVariant}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ delay: index * 0.2 }}
-              className="flex flex-col md:flex-row items-center md:items-start md:space-x-8">
-              <div className="flex-shrink-0 mb-6 md:mb-0 text-center">
+              className="flex flex-col md:flex-row items-center gap-6 md:gap-10"
+            >
+              {/* Image */}
+              <div className="flex-shrink-0">
                 <img
                   src={item.img}
-                  alt="Mobile App"
-                  className="w-48 h-auto object-contain mx-auto"
+                  alt={item.title}
+                  className="w-32 md:w-44 object-contain"
                 />
               </div>
-              <div className="text-center italic md:!space-y-10 md:text-left">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+
+              {/* Text */}
+              <div className="text-center md:text-left max-w-lg">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed md:text-lg">
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                   {item.desc}
                 </p>
               </div>

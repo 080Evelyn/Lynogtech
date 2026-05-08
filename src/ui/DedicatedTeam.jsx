@@ -7,78 +7,88 @@ import team3 from "../assets/team3.png";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 50 },
-  visible: {
+  visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+    transition: { duration: 0.6, delay, ease: "easeOut" },
+  }),
 };
+
 const DedicatedTeam = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const team = [
+    {
+      img: team1,
+      title: "Experienced Developers",
+      desc: `Our developers bring strong expertise in building scalable web and mobile applications, delivering reliable and efficient solutions.`,
+    },
+    {
+      img: team2,
+      title: "Creative Designers",
+      desc: `Our designers craft intuitive and visually engaging interfaces that enhance user experience and product usability.`,
+    },
+    {
+      img: team3,
+      title: "Strategic Project Managers",
+      desc: `We ensure smooth execution through clear planning, efficient coordination, and consistent communication.`,
+    },
+  ];
+
   return (
     <section
       ref={ref}
-      className="relative py-16 px-4 md:px-8 overflow-hidden bg-[#D2E3FA]">
-      {/* Background Image */}
+      className="relative py-16 px-4 md:px-10 overflow-hidden bg-[#080B1A]"
+    >
+      {/* Background */}
       <div
-        className="absolute w-[50%] inset-0 bg-cover bg-center "
-        style={{ backgroundImage: `url('${serviceBg}')` }}></div>
+        className="absolute inset-0 opacity-[0.05] bg-cover bg-center"
+        style={{ backgroundImage: `url('${serviceBg}')` }}
+      />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Section Heading */}
+      <div className="relative z-10 max-w-5xl mx-auto">
+        {/* Header */}
         <motion.div
           variants={fadeUpVariant}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-12 italic">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          className="text-center mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
             Our Dedicated Team
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600">
-            A group of passionate professionals committed to delivering
-            exceptional results.
+          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
+            A team of professionals committed to delivering high-quality results.
           </p>
         </motion.div>
 
-        {/* Feature List */}
+        {/* Team Items */}
         <div className="space-y-12">
-          {[
-            {
-              img: team1,
-              title: "Experienced Developers",
-              desc: `Our developers bring years of experience in mobile and web application development, ensuring that every project is executed with precision and skill. Their diverse backgrounds allow us to tackle challenges from multiple angles, delivering innovative solutions that meet our clients' needs.`,
-            },
-            {
-              img: team2,
-              title: "Creative Designers",
-              desc: `Our design team specializes in creating visually stunning and user-friendly interfaces. They are dedicated to enhancing user experience through thoughtful design, making sure that our applications are not only functional but also engaging and easy to use.`,
-            },
-            {
-              img: team3,
-              title: "Strategic Project Managers",
-              desc: `Our project managers are experts in aligning project goals with client expectations. They ensure that timelines are met, resources are allocated efficiently, and communication channels remain open, guiding projects to successful completion.`,
-            },
-          ].map((item, index) => (
+          {team.map((item, index) => (
             <motion.div
               key={index}
+              custom={index * 0.2}
               variants={fadeUpVariant}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ delay: index * 0.2 }}
-              className="flex flex-col md:flex-row items-center md:items-start md:space-x-8">
-              <div className="flex-shrink-0 mb-6 md:mb-0 text-center">
+              className="flex flex-col md:flex-row items-center gap-6 md:gap-10"
+            >
+              {/* Image */}
+              <div className="flex-shrink-0">
                 <img
                   src={item.img}
-                  alt="Mobile App"
-                  className="w-48 md:w-[400px] h-auto object-contain mx-auto"
+                  alt={item.title}
+                  className="w-32 md:w-44 object-contain"
                 />
               </div>
-              <div className="text-center italic md:!space-y-10 md:text-left">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+
+              {/* Text */}
+              <div className="text-center md:text-left max-w-lg">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed md:text-lg">
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                   {item.desc}
                 </p>
               </div>
