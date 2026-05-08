@@ -59,7 +59,7 @@ const clientProducts = [
   },
   {
     id: 6,
-    name: "BITWIRE",
+    name: "BITWIRETRUST",
     category: "Crypto & Finance",
     desc: "A platform for crypto trading, gift cards, and utility payments.",
     image: bitwireImg,
