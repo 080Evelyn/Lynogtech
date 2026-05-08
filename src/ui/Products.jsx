@@ -4,6 +4,7 @@ import delynImg from "../assets/delyn1.png";
 import lynafrickImg from "../assets/lynafrick.png";
 import monifrapImg from "../assets/monifrap.png";
 import mialaImg from "../assets/maila.png";
+<<<<<<< HEAD
 import bitwireImg from "../assets/bitwire1.png";
 import deonsmartImg from "../assets/deonsmart.png";
 import ifensImg from "../assets/ifens.png";
@@ -11,6 +12,11 @@ import jslotImg from "../assets/j-slot.png";
 import Navbar from "../components/Navbar";
 
 /* ================= DATA ================= */
+=======
+import delynImg1 from "../assets/bitwire1.png";
+import deonsmartImg from "../assets/deonsmart.png";
+import ifensImg from "../assets/ifens.png";
+>>>>>>> c78ec4d65992b76de4bf07d3d7484e513d56f542
 
 const ownProducts = [
   {
@@ -61,8 +67,13 @@ const clientProducts = [
     id: 6,
     name: "BITWIRETRUST",
     category: "Crypto & Finance",
+<<<<<<< HEAD
     desc: "A platform for crypto trading, gift cards, and utility payments.",
     image: bitwireImg,
+=======
+    desc: "A single platform to trade gift cards, buy and sell crypto, and pay utility bills like data and electricity — turning digital assets into local value quickly and securely.",
+    image: delynImg,
+>>>>>>> c78ec4d65992b76de4bf07d3d7484e513d56f542
     link: "https://bitwiretrust.vercel.app/",
   },
   {
@@ -71,13 +82,24 @@ const clientProducts = [
     category: "Networking & CCTV",
     desc: "A company providing networking, security, and connectivity solutions.",
     image: ifensImg,
+<<<<<<< HEAD
     link: "https://ifenstech.vercel.app/",
+=======
+    link: "https://ifens.vercel.app/",
+    accent: "#A78BFA",
+    number: "03",
+>>>>>>> c78ec4d65992b76de4bf07d3d7484e513d56f542
   },
   {
     id: 8,
     name: "Deon Smart Solution",
+<<<<<<< HEAD
     category: "Smart Security",
     desc: "Premium smart lock systems for homes and businesses.",
+=======
+    category: "Smart Lock Systems",
+    desc: "We provide premium smart security solutions designed for modern homes, businesses, and luxury spaces — combining technology, convenience, and peace of mind.",
+>>>>>>> c78ec4d65992b76de4bf07d3d7484e513d56f542
     image: deonsmartImg,
     link: "https://deon-lovat.vercel.app/",
   },
