@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { } from "framer-motion";
 
 import lynspeedImg from "../assets/lynspeed.png";
 import delynImg from "../assets/delyn1.png";
@@ -9,6 +9,7 @@ import bitwireImg from "../assets/bitwire1.png";
 import deonsmartImg from "../assets/deonsmart.png";
 import ifensImg from "../assets/ifens.png";
 import jslotImg from "../assets/j-slot.png";
+import ulasbreyImg from "../assets/ulasbrey.png";
 
 /* ================= DATA ================= */
 
@@ -87,6 +88,14 @@ const clientProducts = [
     desc: "A platform for laptops, phones, accessories, and repairs.",
     image: jslotImg,
     link: "https://gadgetstore-three.vercel.app/",
+  },
+  {
+    id: 10,
+    name: "Ulasbrey & Company Ltd",
+    category: "Engineering Company",
+    desc: "A professional engineering company specializing in electrical engineering, civil engineering, transportation, and facility management services across Nigeria",
+    image: ulasbreyImg,
+    link: "https://electrical-company-six.vercel.app/",
   },
 ];
 
