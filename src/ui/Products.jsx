@@ -1,4 +1,4 @@
-import { } from "framer-motion";
+import { motion } from "framer-motion";
 
 import lynspeedImg from "../assets/lynspeed.png";
 import delynImg from "../assets/delyn1.png";
