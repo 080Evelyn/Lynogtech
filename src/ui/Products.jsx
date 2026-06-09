@@ -10,6 +10,7 @@ import deonsmartImg from "../assets/deonsmart.png";
 import ifensImg from "../assets/ifens.png";
 import jslotImg from "../assets/j-slot.png";
 import ulasbreyImg from "../assets/ulasbrey.png";
+import lynafrickerpImg from "../assets/lynafrick-erp.png";
 
 /* ================= DATA ================= */
 
@@ -96,6 +97,14 @@ const clientProducts = [
     desc: "A professional engineering company specializing in electrical engineering, civil engineering, transportation, and facility management services across Nigeria",
     image: ulasbreyImg,
     link: "https://electrical-company-six.vercel.app/",
+  },
+  {
+    id: 11,
+    name: "Lynafrick Internal ERP",
+    category: "ERP System",
+    desc: "A comprehensive enterprise resource planning system for managing food production and business operations.",
+    image: lynafrickerpImg,
+    link: "https://lynafrick-erp.vercel.app/",
   },
 ];
 
